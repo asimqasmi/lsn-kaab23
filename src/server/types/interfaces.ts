@@ -1,3 +1,5 @@
+import { Dispatch, ReactNode, SetStateAction } from "react";
+
 export interface ILogin {
   username: string;
   password: string;
@@ -30,4 +32,14 @@ export interface IAcknowledgementResponse {
   success: boolean;
   message: string;
   errors?: string[];
+}
+
+export interface INavLink {
+  to: string;
+  children: ReactNode;
+}
+
+export interface IMobileNav {
+  open: boolean;
+  setOpen: Dispatch<SetStateAction<boolean>>;
 }
