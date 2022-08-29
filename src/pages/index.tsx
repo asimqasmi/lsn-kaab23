@@ -7,6 +7,7 @@ const Home: NextPage = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Meta title="main" />
+      <h1>Test</h1>
       <IndexPageMain />
       <IndexPageFooter />
     </div>
