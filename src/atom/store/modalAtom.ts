@@ -3,7 +3,7 @@ import {
   LOGIN_MODAL_TYPE,
   USER_PROFILE_MODAL_STATE,
   USER_PROFILE_MODAL_TYPE,
-} from "@src/server/types/constants";
+} from "@src/types/constants";
 import { atom } from "recoil";
 
 export const userProfileModalState = atom({
