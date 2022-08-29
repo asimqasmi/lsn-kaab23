@@ -55,7 +55,7 @@ function MobileNav({ open, setOpen }: IMobileNav) {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <nav className="flex items-center h-20 px-4 py-4 text-white bg-indigo-700 filter drop-shadow-md">
+    <nav className="flex items-center h-20 px-4 py-4 text-black bg-indigo-700 filter drop-shadow-md">
       <MobileNav open={open} setOpen={setOpen} />
       <div className="flex items-center w-3/12">
         <a className="text-2xl font-semibold" href="/">
