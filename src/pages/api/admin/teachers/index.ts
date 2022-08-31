@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import dbConnect from "@server/util/dbConnect";
 import Teacher from "@server/models/Teacher";
-import Users from "@server/models/User";
 
 export default async function handler(
   req: NextApiRequest,
@@ -30,7 +29,7 @@ export default async function handler(
       console.log("Adding a teacher");
       try {
         console.log(req.body);
-        const user = await Users.create(
+        const user = await Teacher.create(
           req.body
         ); /* create a new model in the database */
         res.status(201).json({ success: true, data: user });
