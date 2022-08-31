@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import dbConnect from "@server/util/dbConnect";
-import Teacher from "@server/models/Teacher";
-import Users from "@src/server/models/User";
+import Users from "@server/models/Users";
 
 export default async function handler(
   req: NextApiRequest,
@@ -16,18 +15,18 @@ export default async function handler(
     case "GET":
       try {
         console.log(req.body);
-        const teachers = await Teacher.find({}).sort({
+        const users = await Users.find({}).sort({
           number: 1,
         }); /* find all the data in our database */
         res
           .status(200)
-          .json({ success: true, length: teachers.length, data: teachers });
+          .json({ success: true, length: users.length, data: users });
       } catch (error) {
         res.status(400).json({ success: false });
       }
       break;
     case "POST":
-      console.log("Adding a teacher");
+      console.log("Adding a users");
       try {
         console.log(req.body);
         const user = await Users.create(
@@ -43,10 +42,10 @@ export default async function handler(
 
     case "DELETE":
       try {
-        const deletedTeachers = await Teacher.deleteMany({
+        const deletedUsers = await Users.deleteMany({
           _id: Object(req.body),
         });
-        res.status(201).json({ success: true, data: deletedTeachers });
+        res.status(201).json({ success: true, data: deletedUsers });
       } catch (error: any) {
         res.status(400).json({ success: false, message: error.message });
       }
