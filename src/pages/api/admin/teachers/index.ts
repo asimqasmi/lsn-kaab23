@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import dbConnect from "@server/util/dbConnect";
 import Teacher from "@server/models/Teacher";
-import Users from "@src/server/models/User";
+import Users from "@server/models/User";
 
 export default async function handler(
   req: NextApiRequest,
