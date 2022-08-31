@@ -1,0 +1,242 @@
+[
+  {
+    "title": "الأحد الأولى",
+    "day": "الأحد",
+    "dayPeriodNum": "الأولى",
+    "WeekPeriodNum": 1
+  },
+  {
+    "title": "الأحد الثانية",
+    "day": "الأحد",
+    "dayPeriodNum": "الثانية",
+    "WeekPeriodNum": 2
+  },
+  {
+    "title": "الأحد الثالثة",
+    "day": "الأحد",
+    "dayPeriodNum": "الثالثة",
+    "WeekPeriodNum": 3
+  },
+  {
+    "title": "الأحد الرابعة",
+    "day": "الأحد",
+    "dayPeriodNum": "الرابعة",
+    "WeekPeriodNum": 4
+  },
+  {
+    "title": "الأحد الخامسة",
+    "day": "الأحد",
+    "dayPeriodNum": "الخامسة",
+    "WeekPeriodNum": 5
+  },
+  {
+    "title": "الأحد السادسة",
+    "day": "الأحد",
+    "dayPeriodNum": "السادسة",
+    "WeekPeriodNum": 6
+  },
+  {
+    "title": "الأحد السابعة",
+    "day": "الأحد",
+    "dayPeriodNum": "السابعة",
+    "WeekPeriodNum": 7
+  },
+  {
+    "title": "الأحد الثامنة",
+    "day": "الأحد",
+    "dayPeriodNum": "الثامنة",
+    "WeekPeriodNum": 8
+  },
+  {
+    "title": "الاثنين الأولى",
+    "day": "الاثنين",
+    "dayPeriodNum": "الأولى",
+    "WeekPeriodNum": 9
+  },
+  {
+    "title": "الاثنين الثانية",
+    "day": "الاثنين",
+    "dayPeriodNum": "الثانية",
+    "WeekPeriodNum": 10
+  },
+  {
+    "title": "الاثنين الثالثة",
+    "day": "الاثنين",
+    "dayPeriodNum": "الثالثة",
+    "WeekPeriodNum": 11
+  },
+  {
+    "title": "الاثنين الرابعة",
+    "day": "الاثنين",
+    "dayPeriodNum": "الرابعة",
+    "WeekPeriodNum": 12
+  },
+  {
+    "title": "الاثنين الخامسة",
+    "day": "الاثنين",
+    "dayPeriodNum": "الخامسة",
+    "WeekPeriodNum": 13
+  },
+  {
+    "title": "الاثنين السادسة",
+    "day": "الاثنين",
+    "dayPeriodNum": "السادسة",
+    "WeekPeriodNum": 14
+  },
+  {
+    "title": "الاثنين السابعة",
+    "day": "الاثنين",
+    "dayPeriodNum": "السابعة",
+    "WeekPeriodNum": 15
+  },
+  {
+    "title": "الاثنين الثامنة",
+    "day": "الاثنين",
+    "dayPeriodNum": "الثامنة",
+    "WeekPeriodNum": 16
+  },
+  {
+    "title": "الثلاثاء الأولى",
+    "day": "الثلاثاء",
+    "dayPeriodNum": "الأولى",
+    "WeekPeriodNum": 17
+  },
+  {
+    "title": "الثلاثاء الثانية",
+    "day": "الثلاثاء",
+    "dayPeriodNum": "الثانية",
+    "WeekPeriodNum": 18
+  },
+  {
+    "title": "الثلاثاء الثالثة",
+    "day": "الثلاثاء",
+    "dayPeriodNum": "الثالثة",
+    "WeekPeriodNum": 19
+  },
+  {
+    "title": "الثلاثاء الرابعة",
+    "day": "الثلاثاء",
+    "dayPeriodNum": "الرابعة",
+    "WeekPeriodNum": 20
+  },
+  {
+    "title": "الثلاثاء الخامسة",
+    "day": "الثلاثاء",
+    "dayPeriodNum": "الخامسة",
+    "WeekPeriodNum": 21
+  },
+  {
+    "title": "الثلاثاء السادسة",
+    "day": "الثلاثاء",
+    "dayPeriodNum": "السادسة",
+    "WeekPeriodNum": 22
+  },
+  {
+    "title": "الثلاثاء السابعة",
+    "day": "الثلاثاء",
+    "dayPeriodNum": "السابعة",
+    "WeekPeriodNum": 23
+  },
+  {
+    "title": "الثلاثاء الثامنة",
+    "day": "الثلاثاء",
+    "dayPeriodNum": "الثامنة",
+    "WeekPeriodNum": 24
+  },
+  {
+    "title": "الأربعاء الأولى",
+    "day": "الأربعاء",
+    "dayPeriodNum": "الأولى",
+    "WeekPeriodNum": 25
+  },
+  {
+    "title": "الأربعاء الثانية",
+    "day": "الأربعاء",
+    "dayPeriodNum": "الثانية",
+    "WeekPeriodNum": 26
+  },
+  {
+    "title": "الأربعاء الثالثة",
+    "day": "الأربعاء",
+    "dayPeriodNum": "الثالثة",
+    "WeekPeriodNum": 27
+  },
+  {
+    "title": "الأربعاء الرابعة",
+    "day": "الأربعاء",
+    "dayPeriodNum": "الرابعة",
+    "WeekPeriodNum": 28
+  },
+  {
+    "title": "الأربعاء الخامسة",
+    "day": "الأربعاء",
+    "dayPeriodNum": "الخامسة",
+    "WeekPeriodNum": 29
+  },
+  {
+    "title": "الأربعاء السادسة",
+    "day": "الأربعاء",
+    "dayPeriodNum": "السادسة",
+    "WeekPeriodNum": 30
+  },
+  {
+    "title": "الأربعاء السابعة",
+    "day": "الأربعاء",
+    "dayPeriodNum": "السابعة",
+    "WeekPeriodNum": 31
+  },
+  {
+    "title": "الأربعاء  الثامنة",
+    "day": "الأربعاء",
+    "dayPeriodNum": "الثامنة",
+    "WeekPeriodNum": 32
+  },
+  {
+    "title": "الخميس الأولى",
+    "day": "الخميس",
+    "dayPeriodNum": "الأولى",
+    "WeekPeriodNum": 33
+  },
+  {
+    "title": "الخميس الثانية",
+    "day": "الخميس",
+    "dayPeriodNum": "الثانية",
+    "WeekPeriodNum": 34
+  },
+  {
+    "title": "الخميس الثالثة",
+    "day": "الخميس",
+    "dayPeriodNum": "الثالثة",
+    "WeekPeriodNum": 35
+  },
+  {
+    "title": "الخميس الرابعة",
+    "day": "الخميس",
+    "dayPeriodNum": "الرابعة",
+    "WeekPeriodNum": 36
+  },
+  {
+    "title": "الخميس الخامسة",
+    "day": "الخميس",
+    "dayPeriodNum": "الخامسة",
+    "WeekPeriodNum": 37
+  },
+  {
+    "title": "الخميس السادسة",
+    "day": "الخميس",
+    "dayPeriodNum": "السادسة",
+    "WeekPeriodNum": 38
+  },
+  {
+    "title": "الخميس السابعة",
+    "day": "الخميس",
+    "dayPeriodNum": "السابعة",
+    "WeekPeriodNum": 39
+  },
+  {
+    "title": "الخميس  الثامنة",
+    "day": "الخميس",
+    "dayPeriodNum": "الثامنة",
+    "WeekPeriodNum": 40
+  }
+]

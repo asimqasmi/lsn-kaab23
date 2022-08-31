@@ -5,10 +5,11 @@ import type { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <Meta title="main" />
       <IndexPageMain />
-      <IndexPageFooter />
+
+      {/* <IndexPageFooter /> */}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import dbConnect from "@server/util/dbConnect";
-import Teacher from "@server/models/Teacher";
+import Period from "@server/models/Period";
 import Users from "@src/server/models/User";
 
 export default async function handler(
@@ -16,21 +16,21 @@ export default async function handler(
     case "GET":
       try {
         console.log(req.body);
-        const teachers = await Teacher.find({}).sort({
-          number: 1,
+        const Periods = await Period.find({}).sort({
+          WeekPeriodNum: 1,
         }); /* find all the data in our database */
         res
           .status(200)
-          .json({ success: true, length: teachers.length, data: teachers });
+          .json({ success: true, length: Periods.length, data: Periods });
       } catch (error) {
         res.status(400).json({ success: false });
       }
       break;
     case "POST":
-      console.log("Adding a teacher");
+      console.log("Adding a Period");
       try {
         console.log(req.body);
-        const user = await Users.create(
+        const user = await Period.create(
           req.body
         ); /* create a new model in the database */
         res.status(201).json({ success: true, data: user });
@@ -43,10 +43,10 @@ export default async function handler(
 
     case "DELETE":
       try {
-        const deletedTeachers = await Teacher.deleteMany({
+        const deletedPeriods = await Period.deleteMany({
           _id: Object(req.body),
         });
-        res.status(201).json({ success: true, data: deletedTeachers });
+        res.status(201).json({ success: true, data: deletedPeriods });
       } catch (error: any) {
         res.status(400).json({ success: false, message: error.message });
       }

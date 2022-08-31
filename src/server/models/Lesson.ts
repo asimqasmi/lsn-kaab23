@@ -11,7 +11,7 @@ const LessonSchema = new mongoose.Schema({
   class: {
     /* The name of this lesson */
     type: String,
-    required: [true, "Please provide a class for this lesson."],
+    required: [false],
     maxlength: [10, "Class cannot be more than 60 characters"],
   },
   day: {
@@ -33,11 +33,6 @@ const LessonSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Teacher",
   },
-  active: {
-    type: Boolean,
-    required: true,
-    default: false,
-  },
   createdAt: {
     type: Date,
     immutable: true,
@@ -46,6 +41,18 @@ const LessonSchema = new mongoose.Schema({
   updatedAt: {
     type: Date,
     default: () => Date.now(),
+  },
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
+  updatedBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
+  active: {
+    type: Boolean,
+    default: false,
   },
 });
 

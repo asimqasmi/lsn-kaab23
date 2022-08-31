@@ -1,97 +1,96 @@
-import { IMobileNav, INavLink } from "@src/server/types/interfaces";
-import Link from "next/link";
-import { useState } from "react";
+import { signOut, useSession } from "next-auth/react";
 
-function NavLink({ to, children }: INavLink) {
+const Nav = (): JSX.Element => {
+  const { data } = useSession();
+  if (!data) return <></>;
+  const { user } = data;
+  console.log(user);
   return (
-    <Link href={to}>
-      <a className={`mx-4`}>{children}</a>
-    </Link>
-  );
-}
-
-function MobileNav({ open, setOpen }: IMobileNav) {
-  return (
-    <div
-      className={`absolute top-0 left-0 h-screen w-screen bg-white transform ${
-        open ? "-translate-x-0" : "-translate-x-full"
-      } transition-transform duration-300 ease-in-out filter drop-shadow-md `}
-    >
-      <div className="flex items-center justify-center h-20 bg-white filter drop-shadow-md">
-        {" "}
-        {/*logo container*/}
-        <a className="text-xl font-semibold" href="/">
-          LOGO
-        </a>
+    <div className="navbar bg-base-100">
+      <div className="flex-1">
+        <a className="text-xl normal-case btn btn-ghost">Logo</a>
+        <ul
+          tabIndex={0}
+          className="hidden p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52 lg:flex lg:flex-row"
+        >
+          <li>
+            <a className="justify-between">
+              Profile
+              {/* <span className="badge">New</span> */}
+            </a>
+          </li>
+          <li>
+            <a>Settings</a>
+          </li>
+          <li>
+            <a>Logout</a>
+          </li>
+        </ul>
       </div>
-      <div className="flex flex-col ml-4">
-        <a
-          className="my-4 text-xl font-medium"
-          href="/about"
-          onClick={() =>
-            setTimeout(() => {
-              setOpen(!open);
-            }, 100)
-          }
-        >
-          About
-        </a>
-        <a
-          className="my-4 text-xl font-normal"
-          href="/contact"
-          onClick={() =>
-            setTimeout(() => {
-              setOpen(!open);
-            }, 100)
-          }
-        >
-          Contact
-        </a>
+      <div className="flex-none">
+        <div className="dropdown dropdown-end">
+          <label tabIndex={0} className="btn btn-ghost btn-circle">
+            <div className="indicator">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+                />
+              </svg>
+
+              <span className="bg-red-700 badge badge-sm indicator-item">
+                8
+              </span>
+            </div>
+          </label>
+          <div
+            tabIndex={0}
+            className="mt-3 shadow card card-compact dropdown-content w-52 bg-base-100"
+          >
+            <div className="card-body">
+              <span className="text-lg font-bold">3 اشعارات</span>
+              <span className="text-info">Subtotal: $999</span>
+              <div className="card-actions">
+                <button className="btn btn-primary btn-block">View cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="dropdown dropdown-end">
+          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <div className="w-10 rounded-full">
+              <img src={user.image} />
+            </div>
+          </label>
+          <ul
+            tabIndex={0}
+            className="p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <a className="justify-between">
+                Profile
+                <span className="badge">New</span>
+              </a>
+            </li>
+            <li>
+              <a>Settings</a>
+            </li>
+            <li>
+              <a onClick={() => signOut()}>Logout</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
-}
+};
 
-export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  return (
-    <nav className="flex items-center h-20 px-4 py-4 text-black bg-indigo-700 filter drop-shadow-md">
-      <MobileNav open={open} setOpen={setOpen} />
-      <div className="flex items-center w-3/12">
-        <a className="text-2xl font-semibold" href="/">
-          LOGO
-        </a>
-      </div>
-      <div className="flex items-center justify-end w-9/12">
-        <div
-          className="relative z-50 flex flex-col items-center justify-between w-8 h-8 cursor-pointer md:hidden"
-          onClick={() => {
-            setOpen(!open);
-          }}
-        >
-          {/* hamburger button */}
-          <span
-            className={`h-1 w-full bg-black rounded-lg transform transition duration-300 ease-in-out ${
-              open ? "rotate-45 translate-y-3.5" : ""
-            }`}
-          />
-          <span
-            className={`h-1 w-full bg-black rounded-lg transition-all duration-300 ease-in-out ${
-              open ? "w-0" : "w-full"
-            }`}
-          />
-          <span
-            className={`h-1 w-full bg-black rounded-lg transform transition duration-300 ease-in-out ${
-              open ? "-rotate-45 -translate-y-3.5" : ""
-            }`}
-          />
-        </div>
-
-        <div className="hidden md:flex">
-          <NavLink to="/contact">CONTACT</NavLink>
-          <NavLink to="/about">ABOUT</NavLink>
-        </div>
-      </div>
-    </nav>
-  );
-}
+export default Nav;

@@ -43,3 +43,11 @@ export interface IMobileNav {
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
 }
+
+export interface IPeriod {
+  _id: string;
+  title: string;
+  day: string;
+  dayPeriodNum: string;
+  WeekPeriodNum: number;
+}

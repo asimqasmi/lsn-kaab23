@@ -11,3 +11,4 @@ export interface ImetaProps {
   keywords: string;
   description: string;
 }
+declare module "daisyui";
