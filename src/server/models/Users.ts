@@ -31,21 +31,10 @@ const userSchema = new mongoose.Schema(
       minLength: [60, "Your password must be longer than 6 characters"],
       validate: [validator.isURL, "Please enter valid image url"],
     },
-    // avatar: {
-    //   required: [false],
-    //   public_id: {
-    //     type: String,
-    //     required: true,
-    //   },
-    //   url: {
-    //     type: String,
-    //     required: true,
-    //   },
-    // },
     role: {
-      type: String,
-      enum: ["TEACHER", "SENIOR_TEACHER", "ADMIN", "OWNER"],
-      default: "TEACHER",
+      type: [String],
+      default: ["USER"],
+      required: true,
     },
     createdAt: {
       type: Date,

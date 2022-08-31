@@ -1,7 +1,7 @@
 import dbConnect from "@server/util/dbConnect";
-import Teacher from "../../../server/models/Teacher";
 import { NextApiRequest } from "next";
 import { NextApiResponse } from "next";
+import Users from "@server/models/Users";
 
 export default async function handler(
   req: NextApiRequest,
@@ -17,14 +17,14 @@ export default async function handler(
   switch (method) {
     case "GET" /* Get a model by its ID */:
       try {
-        const teacher = await Teacher.findById(id);
-        if (!teacher) {
+        const user = await Users.findById(id);
+        if (!user) {
           return res.status(400).json({
             success: false,
-            message: "No teacher in DB with this id!",
+            message: "No user in DB with this id!",
           });
         }
-        res.status(200).json({ success: true, data: teacher });
+        res.status(200).json({ success: true, data: user });
       } catch (error) {
         res.status(400).json({ success: false });
       }
@@ -32,14 +32,14 @@ export default async function handler(
 
     case "PUT" /* Edit a model by its ID */:
       try {
-        const teacher = await Teacher.findByIdAndUpdate(id, req.body, {
+        const user = await Users.findByIdAndUpdate(id, req.body, {
           new: true,
           runValidators: true,
         });
-        if (!teacher) {
+        if (!user) {
           return res.status(400).json({ success: false });
         }
-        res.status(200).json({ success: true, data: teacher });
+        res.status(200).json({ success: true, data: user });
       } catch (error) {
         res.status(400).json({ success: false });
       }
@@ -47,8 +47,8 @@ export default async function handler(
 
     case "DELETE" /* Delete a model by its ID */:
       try {
-        const deletedTeacher = await Teacher.deleteOne({ _id: id });
-        if (!deletedTeacher) {
+        const deletedUser = await Users.deleteOne({ _id: id });
+        if (!deletedUser) {
           return res.status(400).json({ success: false });
         }
         res.status(200).json({ success: true, data: { id } });
