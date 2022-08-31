@@ -1,17 +1,20 @@
-import { signOut, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
+import Link from "next/link";
 
 const Nav = (): JSX.Element => {
   const { data } = useSession();
-  if (!data) return <></>;
-  const { user } = data;
-  console.log(user);
+  // if (!data) return <></>;
+  // const { user } = data;
+  // console.log(user);
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1">
-        <a className="text-xl normal-case btn btn-ghost">Logo</a>
+        <Link href="/">
+          <a className="text-xl normal-case btn btn-ghost">Logo</a>
+        </Link>
         <ul
           tabIndex={0}
-          className="hidden p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52 lg:flex lg:flex-row"
+          className="hidden p-2 mt-3 shadow menu sm:menu-compact sm:dropdown-content bg-base-100 rounded-box w-52 lg:flex lg:flex-row"
         >
           <li>
             <a className="justify-between">
@@ -67,7 +70,11 @@ const Nav = (): JSX.Element => {
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img src={user.image} />
+              {data ? (
+                <img src={data?.user.image} />
+              ) : (
+                <img src="/placeholder286x300.jpg" />
+              )}
             </div>
           </label>
           <ul
@@ -81,10 +88,24 @@ const Nav = (): JSX.Element => {
               </a>
             </li>
             <li>
-              <a>Settings</a>
+              <Link href="/periods">
+                <a className="justify-between">
+                  periods
+                  {/* <span className="badge">New</span> */}
+                </a>
+              </Link>
             </li>
             <li>
-              <a onClick={() => signOut()}>Logout</a>
+              <Link href="/samples">
+                <a>samples</a>
+              </Link>
+            </li>
+            <li>
+              {data ? (
+                <a onClick={() => signOut()}>Logout</a>
+              ) : (
+                <a onClick={() => signIn()}>Login</a>
+              )}
             </li>
           </ul>
         </div>
